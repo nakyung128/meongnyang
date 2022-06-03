@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MovingObject : MonoBehaviour
 {
+    private BoxCollider2D boxCollider;
+    public LayerMask layerMask;     //충돌 layer 판단
+
     public float speed;
 
     private Vector3 vector;
@@ -24,6 +27,7 @@ public class MovingObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();    //component 통제
     }
 
@@ -51,6 +55,22 @@ public class MovingObject : MonoBehaviour
             }
             animator.SetFloat("DirX", vector.x);
             animator.SetFloat("DirY", vector.y);
+
+            RaycastHit2D hit;   //충돌할경우 hit에 장애물 return
+            
+            Vector2 start = transform.position;  //캐릭터의 현재 위치 값
+            Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);    //캐릭터가 이동하고자 하는 위치 값
+
+            boxCollider.enabled = false;
+            hit = Physics2D.Linecast(start, end, layerMask);
+            boxCollider.enabled = true;
+
+            //충돌하지 않았을 경우 null return
+            if (hit.transform != null)
+            {
+                break;
+            }
+
             animator.SetBool("Walking", true);
 
             while (currentWalkCount < walkCount)

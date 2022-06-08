@@ -11,10 +11,12 @@ public class MovingObject : MonoBehaviour
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;     //충돌 layer 판단
 
-    public AudioClip walkSound_1; // 사운드 파일
-    public AudioClip walkSound_2;
+    public string walkSound_1;
+    public string walkSound_2;
+    public string walkSound_3;
+    public string walkSound_4;
 
-    private AudioSource audioSource; // 사운드 플레이어
+    private AudioManager theAudio;
 
     public float speed;
 
@@ -41,6 +43,7 @@ public class MovingObject : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);     //player 파괴 방지
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();    //component 통제
+            theAudio = FindObjectOfType<AudioManager>();
             instance = this;
         }
         else
@@ -90,6 +93,23 @@ public class MovingObject : MonoBehaviour
             }
 
             animator.SetBool("Walking", true);
+
+            int temp = Random.Range(1, 4); // 두 개 중 하나 반환
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+                case 3:
+                    theAudio.Play(walkSound_3);
+                    break;
+                case 4:
+                    theAudio.Play(walkSound_4);
+                    break;
+            }
 
             while (currentWalkCount < walkCount)
             {

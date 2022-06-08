@@ -11,6 +11,11 @@ public class MovingObject : MonoBehaviour
     private BoxCollider2D boxCollider;
     public LayerMask layerMask;     //충돌 layer 판단
 
+    public AudioClip walkSound_1; // 사운드 파일
+    public AudioClip walkSound_2;
+
+    private AudioSource audioSource; // 사운드 플레이어
+
     public float speed;
 
     private Vector3 vector;

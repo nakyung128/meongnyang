@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TransferMap : MonoBehaviour
 {
     public string transferMapName;  //이동할 맵의 이름
+    
     public Transform target;
 
     private MovingObject thePlayer; //MovingObject의 currentMapName 참조하기 위해

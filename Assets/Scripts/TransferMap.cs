@@ -10,14 +10,14 @@ public class TransferMap : MonoBehaviour
     public Transform target;
     public BoxCollider2D targetBound;
 
-    private MovingObject thePlayer; //MovingObject의 currentMapName 참조하기 위해
+    private PlayerManager thePlayer; //MovingObject의 currentMapName 참조하기 위해
     private CameraManager theCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         theCamera = FindObjectOfType<CameraManager>();
-        thePlayer = FindObjectOfType<MovingObject>();   //다수 객체 참조
+        thePlayer = FindObjectOfType<PlayerManager>();   //다수 객체 참조
     }
 
     //box collider 에 닿을 때 실행되는 함수

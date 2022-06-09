@@ -2,26 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingObject : MonoBehaviour
+public class PlayerManager : MovingObject
 {
-    public float speed;
-    public int walkCount;
-    protected int currentWalkCount;
-
-    protected Vector3 vector;
-
-    public BoxCollider2D boxCollider;
-    public LayerMask layerMask;     //충돌 layer 판단
-    public Animator animator;
-
-
-    /*
-    static public MovingObject instance;    //자기 자신을 값으로 가짐
+    static public PlayerManager instance;    //자기 자신을 값으로 가짐
 
     public string currentMapName;   //transferMap 스크립트에 있는 transferMapName 변수의 값을 저장
-
-    private BoxCollider2D boxCollider;
-    public LayerMask layerMask;     //충돌 layer 판단
 
     public string walkSound_1;
     public string walkSound_2;
@@ -30,20 +15,12 @@ public class MovingObject : MonoBehaviour
 
     private AudioManager theAudio;
 
-    public float speed;
-
-    private Vector3 vector;
-    
     public float runSpeed;
     private float applyRunSpeed;
     private bool applyRunFlag = false;
 
-    public int walkCount;
-    private int currentWalkCount;
-
     private bool canMove = true;
 
-    private Animator animator;
 
     //speed * walkCount = pixel 단위
 
@@ -66,7 +43,7 @@ public class MovingObject : MonoBehaviour
 
     IEnumerator MoveCoroutine()
     {
-        while(Input.GetAxisRaw("Vertical")!=0 || Input.GetAxisRaw("Horizontal") != 0)
+        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -90,7 +67,7 @@ public class MovingObject : MonoBehaviour
             animator.SetFloat("DirY", vector.y);
 
             RaycastHit2D hit;   //충돌할경우 hit에 장애물 return
-            
+
             Vector2 start = transform.position;  //캐릭터의 현재 위치 값
             Vector2 end = start + new Vector2(vector.x * speed * walkCount, vector.y * speed * walkCount);    //캐릭터가 이동하고자 하는 위치 값
 
@@ -143,8 +120,8 @@ public class MovingObject : MonoBehaviour
             currentWalkCount = 0;
 
         }
-            animator.SetBool("Walking", false);
-            canMove = true;
+        animator.SetBool("Walking", false);
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -156,7 +133,7 @@ public class MovingObject : MonoBehaviour
         // 상 방향키: 1 리턴, 하 방향키: -1 리턴
 
         // 좌, 우, 상, 하 방향키 눌렸을 경우
-        if(canMove)
+        if (canMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
@@ -166,5 +143,4 @@ public class MovingObject : MonoBehaviour
             }
         }
     }
-    */
 }

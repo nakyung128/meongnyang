@@ -21,7 +21,6 @@ public class PlayerManager : MovingObject
 
     private bool canMove = true;
 
-
     //speed * walkCount = pixel ¥‹¿ß
 
     // Start is called before the first frame update

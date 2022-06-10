@@ -1454,6 +1454,92 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &827496200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827496203}
+  - component: {fileID: 827496202}
+  - component: {fileID: 827496201}
+  m_Layer: 0
+  m_Name: Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &827496201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827496200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0dee287a7d19b24fb999abead9a811c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - "\uB300\uC7A5 !!!!!!!!"
+    - "\uBB34\uC2A8 \uC77C\uC774\uC57C?"
+    - "\uC138\uBC88\uC9F8"
+    - 444444
+    sprites:
+    - {fileID: -8637746308950000947, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
+    - {fileID: -2356788906120516420, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
+    - {fileID: -8637746308950000947, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
+    - {fileID: -2192303928227007942, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
+    dialogueWindows:
+    - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+    - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+    - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+    - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+--- !u!61 &827496202
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827496200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7, y: 20}
+  m_EdgeRadius: 0
+--- !u!4 &827496203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827496200}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1987.3, y: 710, z: 22}
+  m_LocalScale: {x: 11.87617, y: 2.3752341, z: 0.7588376}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &866683275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2696,6 +2782,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 24d812f3be4133e4c9319fe6e8c0314b, type: 3}
     Volumn: 0.5
     loop: 0
+  - name: type_sound
+    clip: {fileID: 8300000, guid: 58a5dd5888761af4dbff225d52caf926, type: 3}
+    Volumn: 0.5
+    loop: 0
+  - name: space_sound
+    clip: {fileID: 8300000, guid: 4fbc62a75b72f6d42b33069b6c067e1d, type: 3}
+    Volumn: 0.5
+    loop: 0
 --- !u!1 &1694277431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,7 +3254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048670107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2291, y: -478, z: 2428.3906}
+  m_LocalPosition: {x: -2253, y: -421, z: 2428.3906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 117139586}
@@ -3216,6 +3310,7 @@ GameObject:
   - component: {fileID: 2083334339}
   - component: {fileID: 2083334338}
   - component: {fileID: 2083334337}
+  - component: {fileID: 2083334341}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3304,6 +3399,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2083334341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083334336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eded9f7d83e0d3e42a8cc1750812c7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 2132427048}
+  rendererSprite: {fileID: 1310285164}
+  rendererDialogueWindow: {fileID: 1619844380}
+  animSprite: {fileID: 1310285165}
+  animDialogueWindow: {fileID: 1619844381}
+  typeSound: type_sound
+  spaceSound: space_sound
+  talking: 0
 --- !u!1 &2132427046
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,7 +3489,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uAC00\uB098\uB2E4\uB77C\uB9C8 "
+  m_Text: 
 --- !u!222 &2132427049
 CanvasRenderer:
   m_ObjectHideFlags: 0

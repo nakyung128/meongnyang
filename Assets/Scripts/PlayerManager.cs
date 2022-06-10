@@ -20,6 +20,7 @@ public class PlayerManager : MovingObject
     private bool applyRunFlag = false;
 
     private bool canMove = true;
+    //public bool notMove = false;
 
     //speed * walkCount = pixel ¥‹¿ß
 

@@ -12,6 +12,7 @@ public class Event1 : MonoBehaviour
     private DialogueManager theDM;
     private OrderManager theOrder;
     private PlayerManager thePlayer; // DirX = -1일 때 (왼쪽 바라볼 때)
+    private FadeManager theFade;
 
     private bool flag; // 한 번 보면 다시 못 보게 함. 이거는 나중에 뺄지 말지 얘기해 보아야 할 듯.
 
@@ -21,6 +22,7 @@ public class Event1 : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         thePlayer = FindObjectOfType<PlayerManager>();
+        theFade = FindObjectOfType<FadeManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -43,6 +45,8 @@ public class Event1 : MonoBehaviour
         yield return new WaitUntil(() => !theDM.talking);
 
         yield return new WaitUntil(() => thePlayer.queue.Count == 0);
+
+        //theFade.Flash(); 필요없음 번개 효과임
 
         theOrder.Move();
     }

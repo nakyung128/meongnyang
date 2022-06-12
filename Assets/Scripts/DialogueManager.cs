@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     public string spaceSound;
 
     private AudioManager theAudio;
-    //private OrderManager theOrder;
+    private OrderManager theOrder;
 
     public bool talking = false;
     private bool keyActivated = false;
@@ -53,14 +53,14 @@ public class DialogueManager : MonoBehaviour
         listSprites = new List<Sprite>();
         listDialogueWindows = new List<Sprite>();
         theAudio = FindObjectOfType<AudioManager>();
-        //theOrder = FindObjectOfType<OrderManager>();
+        theOrder = FindObjectOfType<OrderManager>();
     }
 
     public void ShowDialogue(Dialogue dialogue)
     {
         talking = true;
 
-        //theOrder.NotMove();
+        theOrder.NotMove();
 
         for(int i=0; i < dialogue.sentences.Length; i++)
         {
@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
         animSprite.SetBool("Appear", false);
         animDialogueWindow.SetBool("Appear", false);
         talking = false;
-        //theOrder.Move();
+        theOrder.Move();
     }
 
     IEnumerator StartDialogueCoroutine()

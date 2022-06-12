@@ -20,7 +20,7 @@ public class PlayerManager : MovingObject
     private bool applyRunFlag = false;
 
     private bool canMove = true;
-    //public bool notMove = false;
+    public bool notMove = false;
 
     //speed * walkCount = pixel 단위
 
@@ -29,6 +29,7 @@ public class PlayerManager : MovingObject
     {
         if (instance == null)
         {
+            queue = new Queue<string>();
             DontDestroyOnLoad(this.gameObject);     //player 파괴 방지
             boxCollider = GetComponent<BoxCollider2D>();
             animator = GetComponent<Animator>();    //component 통제
@@ -43,7 +44,7 @@ public class PlayerManager : MovingObject
 
     IEnumerator MoveCoroutine()
     {
-        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0)
+        while (Input.GetAxisRaw("Vertical") != 0 || Input.GetAxisRaw("Horizontal") != 0 && !notMove)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -65,6 +66,10 @@ public class PlayerManager : MovingObject
             }
             animator.SetFloat("DirX", vector.x);
             animator.SetFloat("DirY", vector.y);
+
+            bool checkCollisionFlag = base.CheckCollision();
+            if (checkCollisionFlag)
+                break;
 
             RaycastHit2D hit;   //충돌할경우 hit에 장애물 return
 
@@ -100,6 +105,8 @@ public class PlayerManager : MovingObject
                     break;
             }
 
+            boxCollider.offset = new Vector2(vector.x * 0.7f * speed * walkCount, vector.y * 0.7f * speed * walkCount);
+
             while (currentWalkCount < walkCount)
             {
                 if (vector.x != 0)
@@ -115,6 +122,10 @@ public class PlayerManager : MovingObject
                     currentWalkCount++;
                 }
                 currentWalkCount++;
+                if (currentWalkCount == 12)
+                {
+                    boxCollider.offset = Vector2.zero;
+                }
                 yield return new WaitForSeconds(0.01f);    //0.01초동안 대기 (반복문 20번:0.2초)
             }
             currentWalkCount = 0;
@@ -133,7 +144,7 @@ public class PlayerManager : MovingObject
         // 상 방향키: 1 리턴, 하 방향키: -1 리턴
 
         // 좌, 우, 상, 하 방향키 눌렸을 경우
-        if (canMove)
+        if (canMove && !notMove)
         {
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {

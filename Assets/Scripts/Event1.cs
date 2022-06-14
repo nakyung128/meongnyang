@@ -11,7 +11,7 @@ public class Event1 : MonoBehaviour
 
     private DialogueManager theDM;
     private OrderManager theOrder;
-    private PlayerManager thePlayer; // DirX = -1일 때 (왼쪽 바라볼 때)
+    private PlayerManager thePlayer; // DirY = 1일 때 (위쪽 바라볼 때)
     private FadeManager theFade;
 
     private bool flag; // 한 번 보면 다시 못 보게 함. 이거는 나중에 뺄지 말지 얘기해 보아야 할 듯.
@@ -27,7 +27,7 @@ public class Event1 : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!flag && Input.GetKey(KeyCode.Z) && thePlayer.animator.GetFloat("DirX") == -1f) // z를 눌렀을 때만
+        if(!flag && thePlayer.animator.GetFloat("DirY") == 1f) // 캐릭터가 위를 바라볼 때
         {
             flag = true; // 실행됨
             StartCoroutine(EventCoroutine());

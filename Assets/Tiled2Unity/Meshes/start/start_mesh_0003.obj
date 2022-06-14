@@ -1,5 +1,5 @@
 ﻿# Tiled2Unity generated file. Do not modify by hand.
-# Wavefront file for 'university_mesh_0003.obj'
+# Wavefront file for 'start_mesh_0003.obj'
 
 # Vertices (Count = 24)
 v -256 -16 0
@@ -45,7 +45,7 @@ vt 0.1683168 0.1584159
 vn 0 0 -1
 
 # Mesh description
-g university_mesh_0003
+g start_mesh_0003
 
 # Faces
 f 1/1/1 2/2/1 3/3/1 4/4/1

@@ -11,10 +11,10 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         GameObject slotPanel = GameObject.Find("Panel");
-        
-        for(int i=0; i<maxSlot; i++)
+
+        for (int i = 0; i < maxSlot; i++)
         {
-           GameObject go = Instantiate(slotPrefab, slotPanel.transform, false);  //slot prefab 持失
+            GameObject go = Instantiate(slotPrefab, slotPanel.transform, false);  //slot prefab 持失
             go.name = "Slot_" + i;
             SlotData slot = new SlotData();
             slot.isEmpty = true;

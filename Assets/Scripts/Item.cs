@@ -33,6 +33,10 @@ public class Item
         itemIcon = Resources.Load("ItemIcon/" + _fileName, typeof(Sprite)) as Sprite;
     }
 
+    public Item(int v1, string v2, string v3, ItemType use)
+    {
+    }
+
     // Start is called before the first frame update
     void Start()
     {

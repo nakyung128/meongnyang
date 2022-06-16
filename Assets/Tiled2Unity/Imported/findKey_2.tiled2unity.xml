@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 2022-06-15 오후 11:58:25-->
+<!--Last exported: 2022-06-16 오후 6:48:26-->
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="findKey_2_mesh_0001" material="Tiles" />
   <AssignMaterial mesh="findKey_2_mesh_0002" material="Tiles" />
@@ -18,6 +18,10 @@
     </GameObject>
     <GameObject name="Object Layer 1" x="0" y="0" z="0" layer="NoPassing">
       <ObjectLayer offsetX="0" offsetY="0" color="#ff808080" />
+      <GameObject name="RectangleObject" x="128" y="-31.8182" rotation="0">
+        <RectangleObjectComponent tmx-object-id="8" tmx-object-name="" tmx-object-type="" tmx-object-x="128" tmx-object-y="31.8182" tmx-object-width="15.8182" tmx-object-height="16" tmx-object-rotation="0" />
+        <BoxCollider2D width="15.8182" height="16" />
+      </GameObject>
       <GameObject name="RectangleObject" x="48.6667" y="-80" rotation="0">
         <RectangleObjectComponent tmx-object-id="6" tmx-object-name="" tmx-object-type="" tmx-object-x="48.6667" tmx-object-y="80" tmx-object-width="30.3333" tmx-object-height="30.6667" tmx-object-rotation="0" />
         <BoxCollider2D width="30.3333" height="30.6667" />

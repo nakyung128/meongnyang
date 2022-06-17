@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class KeyItem : MonoBehaviour
 {
+    Inventory inventory;
+
+    private void Start()
+    {
+        inventory = GameObject.Find("Player").GetComponent<Inventory>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -11,6 +17,8 @@ public class KeyItem : MonoBehaviour
         {
             // 아이템 사용
             Debug.Log((transform.parent.GetComponent<Slot>().num + 1) + "번째 열쇠 조각 사용");
+            inventory.slots[transform.parent.GetComponent<Slot>().num].isEmpty = true;
+            Debug.Log((transform.parent.GetComponent<Slot>().num + 1) + "번째 슬롯 비어 있음: " + inventory.slots[transform.parent.GetComponent<Slot>().num].isEmpty);
             Destroy(this.gameObject);
         }
     }

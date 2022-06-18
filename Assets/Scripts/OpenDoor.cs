@@ -12,8 +12,10 @@ public class OpenDoor : MonoBehaviour
     private DialogueManager theDM;
     private Inventory inventory;
     private OrderManager theOrder;
+    private PlayerManager thePlayer;
 
     private bool flag = false;
+    private bool flag2 = false;
 
 
     // Start is called before the first frame update
@@ -22,31 +24,56 @@ public class OpenDoor : MonoBehaviour
         theDM = FindObjectOfType<DialogueManager>();
         theOrder = FindObjectOfType<OrderManager>();
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
+        thePlayer = FindObjectOfType<PlayerManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!flag && collision.gameObject.name == "Player" && (!inventory.slots[0].isEmpty && !inventory.slots[1].isEmpty && !inventory.slots[2].isEmpty))
+        if (!flag && collision.gameObject.name == "Player")
         {
-            theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
-            theOrder.NotMove(); // 움직이지 않도록
-            theDM.ShowDialogue(dialogue3);
-            if (inventory.slots[0].isEmpty && inventory.slots[1].isEmpty && inventory.slots[2].isEmpty)
-            {
-                theDM.ShowDialogue(dialogue1);
-                flag = true;
-            }
-            theOrder.Move();
-        }
-        else
-        {
-            theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
-            theOrder.NotMove(); // 움직이지 않도록
-            if (!flag)
-            {
-                theDM.ShowDialogue(dialogue2);
-            }
-            theOrder.Move();
+            StartCoroutine(EventCoroutine());
+            if (flag2 && (inventory.slots[0].isEmpty && inventory.slots[1].isEmpty && inventory.slots[2].isEmpty)) StartCoroutine(EventCoroutine2());
         }
     }
+
+    IEnumerator EventCoroutine()
+    {
+        theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
+        theOrder.NotMove(); // 움직이지 않도록
+
+        if (!inventory.slots[0].isEmpty && !inventory.slots[1].isEmpty && !inventory.slots[2].isEmpty)
+        {
+            theDM.ShowDialogue(dialogue3);
+            flag2 = true;
+        }
+        else if (!flag2)
+        {
+            theDM.ShowDialogue(dialogue2);
+        }
+
+        // 대화가 끝날 때까지 기다렸다가 대화가 끝나면 이동시킬 것이다.
+        yield return new WaitUntil(() => !theDM.talking);
+
+        yield return new WaitUntil(() => thePlayer.queue.Count == 0);
+
+        theOrder.Move();
+    }
+
+    IEnumerator EventCoroutine2()
+    {
+        theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
+        theOrder.NotMove(); // 움직이지 않도록
+
+        theDM.ShowDialogue(dialogue1);
+        flag = true;
+
+
+        // 대화가 끝날 때까지 기다렸다가 대화가 끝나면 이동시킬 것이다.
+        yield return new WaitUntil(() => !theDM.talking);
+
+        yield return new WaitUntil(() => thePlayer.queue.Count == 0);
+
+        theOrder.Move();
+    }
+
 }

@@ -27,8 +27,11 @@ AnimationClip:
       value: {fileID: 6032220779116007923, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
     - time: 0.5
       value: {fileID: -6544686245292247471, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
+<<<<<<< HEAD
     - time: 0.6666667
       value: {fileID: -6544686245292247471, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
+=======
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,18 +55,29 @@ AnimationClip:
     - {fileID: -4165489419317151293, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
     - {fileID: 6032220779116007923, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
     - {fileID: -6544686245292247471, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
+<<<<<<< HEAD
     - {fileID: -6544686245292247471, guid: 39ff999cbb3eebe4b976cb4e734ada86, type: 3}
+=======
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< HEAD
     m_StopTime: 0.68333334
+=======
+    m_StopTime: 0.51666665
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
+<<<<<<< HEAD
     m_LoopTime: 0
+=======
+    m_LoopTime: 1
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

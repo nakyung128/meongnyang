@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
+<<<<<<< HEAD
 <!--Last exported: 2022-06-19 오전 3:42:19-->
+=======
+<!--Last exported: 2022-06-16 오전 12:04:15-->
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="findKey_3_mesh_0001" material="Tiles" />
   <AssignMaterial mesh="findKey_3_mesh_0002" material="Tiles" />
@@ -93,10 +97,6 @@
       <GameObject name="RectangleObject" x="16.3636" y="-159.636" rotation="0">
         <RectangleObjectComponent tmx-object-id="4" tmx-object-name="" tmx-object-type="" tmx-object-x="16.3636" tmx-object-y="159.636" tmx-object-width="15.6364" tmx-object-height="16.5455" tmx-object-rotation="0" />
         <BoxCollider2D width="15.6364" height="16.5455" />
-      </GameObject>
-      <GameObject name="RectangleObject" x="160.364" y="-175.818" rotation="0">
-        <RectangleObjectComponent tmx-object-id="22" tmx-object-name="" tmx-object-type="" tmx-object-x="160.364" tmx-object-y="175.818" tmx-object-width="15.6364" tmx-object-height="15.9091" tmx-object-rotation="0" />
-        <BoxCollider2D width="15.6364" height="15.9091" />
       </GameObject>
     </GameObject>
   </Prefab>

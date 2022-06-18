@@ -228,8 +228,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 126050693}
-  - component: {fileID: 126050692}
   - component: {fileID: 126050691}
+  - component: {fileID: 126050692}
   m_Layer: 0
   m_Name: TransferToFinal
   m_TagString: Untagged
@@ -272,12 +272,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 126050690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 107bc8ff3afad1d4488b7b4537d68167, type: 3}
+  m_Script: {fileID: 11500000, guid: d6eeaf563ffc03f409ef7843e65b3844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: 
   target: {fileID: 2001398804}
   targetBound: {fileID: 909444648}
+  dialogue1:
+    sentences:
+    - "\uC544\uC9C1 \uCC3D\uACE0\uB97C \uBABB \uC5F4\uC5B4\uC11C \uB3D9\uAD74 \uC548\uC73C\uB85C\\n\n\uB4E4\uC5B4\uAC08
+      \uC218 \uC5C6\uC5B4."
+    sprites:
+    - {fileID: -2192303928227007942, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
+    dialogueWindows:
+    - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
 --- !u!4 &126050693
 Transform:
   m_ObjectHideFlags: 0
@@ -286,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126050690}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3351, y: -1698, z: 1083.327}
+  m_LocalPosition: {x: -3353, y: -1690, z: 1083.327}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 221075232}
@@ -3343,6 +3351,8 @@ MonoBehaviour:
     - {fileID: -2838968497814293172, guid: 7fc5a33d410a4824295b9e3c32ebc0ff, type: 3}
     dialogueWindows:
     - {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+  flag: 0
+  flag2: 0
 --- !u!1 &1619844378
 GameObject:
   m_ObjectHideFlags: 0

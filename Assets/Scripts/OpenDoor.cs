@@ -8,14 +8,14 @@ public class OpenDoor : MonoBehaviour
     public Dialogue dialogue1;
     public Dialogue dialogue2;
     public Dialogue dialogue3;
+    public bool flag = false;
+    public bool flag2 = false;
 
     private DialogueManager theDM;
     private Inventory inventory;
     private OrderManager theOrder;
     private PlayerManager thePlayer;
 
-    private bool flag = false;
-    private bool flag2 = false;
 
 
     // Start is called before the first frame update

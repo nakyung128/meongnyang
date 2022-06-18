@@ -31,7 +31,6 @@ public class OpenDoor : MonoBehaviour
     {
         if (!flag && collision.gameObject.name == "Player")
         {
-<<<<<<< HEAD
             theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
             theOrder.NotMove(); // 움직이지 않도록
             theDM.ShowDialogue(dialogue3);
@@ -52,10 +51,8 @@ public class OpenDoor : MonoBehaviour
                 theDM.ShowDialogue(dialogue2);
             }
             theOrder.Move();
-=======
             StartCoroutine(EventCoroutine());
             if (flag2 && (inventory.slots[0].isEmpty && inventory.slots[1].isEmpty && inventory.slots[2].isEmpty)) StartCoroutine(EventCoroutine2());
->>>>>>> dd9a2c0a9fb6b899d64b1883f03850b66062fd81
         }
     }
 

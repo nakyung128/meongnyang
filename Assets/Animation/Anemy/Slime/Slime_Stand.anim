@@ -52,7 +52,11 @@ AnimationClip:
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_LoopTime: 0
+=======
+    m_LoopTime: 1
+>>>>>>> parent of 071ab7c (findKey_3 맵 수정)
 =======
     m_LoopTime: 1
 >>>>>>> parent of 071ab7c (findKey_3 맵 수정)

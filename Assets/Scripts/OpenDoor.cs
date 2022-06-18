@@ -31,6 +31,7 @@ public class OpenDoor : MonoBehaviour
             theOrder.PreLoadCharacter(); // 오더매니저에 있는 리스트에 채워주어야 함
             theOrder.NotMove(); // 움직이지 않도록
             theDM.ShowDialogue(dialogue3);
+            
             if (inventory.slots[0].isEmpty && inventory.slots[1].isEmpty && inventory.slots[2].isEmpty)
             {
                 theDM.ShowDialogue(dialogue1);
